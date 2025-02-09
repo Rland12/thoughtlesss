@@ -1,0 +1,29 @@
+html{
+    margin: 0;
+
+}
+body{
+    background: url("images/rain_image.gif"),
+    rgba(255, 105, 97, 12); /* Adjust color and opacity */;
+    background-blend-mode: overlay; 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color:white;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    font-family: "freude", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.header{
+ 
+}
