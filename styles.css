@@ -1,6 +1,5 @@
 html{
     margin: 0;
-
 }
 body{
     background: url("images/rain_image.gif"),
@@ -9,7 +8,7 @@ body{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    color:white;
+    color:#FFF4EB;
     text-align: center;
     width: 100%;
     height: 100%;
@@ -21,7 +20,7 @@ body{
 }
 .overlay{
     background: rgba(0, 0, 0, 0.2); /* Adjust the color and opacity as needed */
-  z-index: 1;
+    z-index: 1;
 }
 .container{
     display: flex;
@@ -29,17 +28,30 @@ body{
     align-items: center;
     height: 100vh;
     width: 100%;
-    
+}
+
+.nav-link{
+    display: inline-block;
+    font-family: "freude", sans-serif;
+    color:#FFF4EB;
+    transition:transform ease 1s;
+}
+nav a:hover{
+    transform: scale(1.2);
 }
 h1,h2,h3{
     font-family: "freude", sans-serif;
     font-weight: 400;
     font-style: normal;
 }
+.form-control, .form-control:focus{
+    background-color: #FAF0E6;
+}
 
-input:focus {
+textarea:focus {
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
 }
+
 .airplane {
     position: absolute;
     width: 40px;
