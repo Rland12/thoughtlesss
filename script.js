@@ -1,6 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
     const input = document.getElementById("message");
     const airplane = document.querySelector(".airplane");
+//adjust quotes api
+    const api_url ="https://zenquotes.io/api/quotes/";
+
+async function getapi(url)
+{
+  const response = await fetch(url);
+  var data = await response.json();
+  console.log(data);
+}
+
+getapi(api_url);
 
 
     // Allow pressing Enter to send message
@@ -51,14 +62,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
     // Array of background objects with image and sound
-    //do same with background colors
     const path = window.location.pathname;
     if (path === "/" || path.endsWith("index.html")) {
         const backgrounds = [
-            { img: 'images/fireplace.gif', sound: 'sounds/firesound.mp3' },
-            { img: 'images/rain_image.gif', sound: 'sounds/rainsound.mp3' },
-            { img: 'images/thundercloud.gif', sound: 'sounds/thundersound.mp3' },
-            { img: 'images/windflower.gif', sound: 'sounds/windsound.mp3' },
+            { img: 'images/fireplace.gif', sound: 'sounds/firesound.mp3', overlay:'rgba(138, 55, 190, 12)'},
+            { img: 'images/rain_image.gif', sound: 'sounds/rainsound.mp3', overlay:'rgba(255, 105, 97, 12)'},
+            { img: 'images/thundercloud.gif', sound: 'sounds/thundersound.mp3', overlay:'rgba(155, 201, 186, 12)'},
+            { img: 'images/windflower.gif', sound: 'sounds/windsound.mp3', overlay:'rgba(20,56,166, 12)'},
         ];
 
         // Pick a random background
@@ -66,7 +76,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const selected = backgrounds[randomIndex];
 
         // Set the background image on the body or a specific container
-        document.body.style.backgroundImage = `url('${selected.img}')`;
+        document.body.style.background = `url('${selected.img}'),${selected.overlay}`;
+        document.body.style.backgroundSize = 'cover';
+        document.body.style.backgroundPosition = 'center';
+        document.body.style.backgroundBlendMode = 'overlay';
 
        // create audio with customizations  
         const wavesurfer = WaveSurfer.create({
