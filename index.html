@@ -17,10 +17,13 @@
    
     <div class="overlay">
       <nav class="navbar navbar-expand-lg bg-transparent">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" 
+            aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
+          <div class="collapse navbar-collapse justify-content-between align-items-center" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
                 <a class="nav-link" href="about.html">About</a>
@@ -30,13 +33,18 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="about.html">Wind</a>
-              </li>
+              </li>          
             </ul>
+            <div id="waveform" class="d-flex align-items-center">
+              <!-- the waveform will be rendered here -->
+            </div>
           </div>
+        </div>
       </nav>
+
         <div class ="container">
             <div class="main">
-                <!-- add additional background image, randomize colors, motivational quotes based on message intent? when message entered. replace lead hide text box, quote fades in after sent msg? -->
+                <!-- randomize colors, motivational quotes based on message intent? when message entered. replace lead hide text box, quote fades in after sent msg? -->
                 <!--https://obliquestrategies.ca/#-->
                 <h1 class="display-1">Cozy</h1>
                 <p class="lead">Enter your thoughts into the void</p>
@@ -46,14 +54,12 @@
                   <textarea class="form-control" id="message" type="text" placeholder="Whats on your mind?" rows="1" ></textarea>
                 </form>
                 <br><br>
-                <audio controls autoplay loop>
-                    <source src="sounds/rain-sound-188158.mp3" type="audio/mpeg">
-                   <p>Your browser does not support the video tag.</p>
-                </audio>
+              
             </div>
         </div>
     </div>
     <script src="script.js"></script>
+    <script src="https://unpkg.com/wavesurfer.js@7"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
