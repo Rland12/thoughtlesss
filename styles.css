@@ -38,6 +38,10 @@ body{
 }
 nav a:hover{
     transform: scale(1.2);
+    color:#FFF4EB;
+}
+.nav-link:hover{
+    color:#FFF4EB;
 }
 h1,h2,h3{
     font-family: "freude", sans-serif;
