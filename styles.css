@@ -2,8 +2,6 @@ html{
     margin: 0;
 }
 body{
-    background: url("images/rain_image.gif"),
-    rgba(255, 105, 97, 12); /* Adjust color and opacity */;
     background-blend-mode: overlay; 
     background-size: cover;
     background-position: center;
@@ -26,17 +24,28 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     width: 100%;
 }
-
+.section-text{
+    color: black;
+    padding: 5%;
+}
+.overlay-about{
+    background-image: url("images/rain_image.gif");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.about-section{
+padding: 8%;
+}
 .nav-link{
     display: inline-block;
     font-family: "freude", sans-serif;
     color:#FFF4EB;
     transition:transform ease 1s;
 }
-nav a:hover{
+nav a:hover a:focus{
     transform: scale(1.2);
     color:#FFF4EB;
 }
