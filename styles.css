@@ -24,8 +24,20 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
     width: 100%;
 }
+
+.nav-link{
+    display: inline-block;
+    font-family: "freude", sans-serif;
+    color:#FFF4EB;
+    transition:transform ease 1s;
+}
+.nav-link:hover{
+    color:#FFF4EB;
+}
+
 .section-text{
     color: black;
     padding: 5%;
@@ -37,7 +49,7 @@ body{
     background-repeat: no-repeat;
 }
 .about-section{
-padding: 8%;
+    padding: 8%;
 }
 .nav-link{
     display: inline-block;
@@ -45,13 +57,11 @@ padding: 8%;
     color:#FFF4EB;
     transition:transform ease 1s;
 }
-nav a:hover a:focus{
+nav a:hover{
     transform: scale(1.2);
     color:#FFF4EB;
 }
-.nav-link:hover{
-    color:#FFF4EB;
-}
+
 h1,h2,h3{
     font-family: "freude", sans-serif;
     font-weight: 400;

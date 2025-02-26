@@ -120,6 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.style.backgroundSize = 'cover';
         document.body.style.backgroundPosition = 'center';
         document.body.style.backgroundBlendMode = 'overlay';
+        document.body.style.backgroundRepeat= "no-repeat";
 
        // create audio with customizations  
         const wavesurfer = WaveSurfer.create({
