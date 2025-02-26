@@ -66,3 +66,35 @@ textarea:focus {
     margin-top: 0;
     padding-top: 0;
   }
+
+  /* Position the quote container absolutely in the center of the screen */
+/* Start hidden for the quote */
+#quote {
+    position: absolute; /* Removes it from normal flow */
+    left: 50%;
+    top: 65%; /* Adjust based on layout */
+    transform: translate(-50%, -50%); /* Centering */
+    width: 80%; /* Adjust as needed */
+    max-width: 600px; /* Prevents excessive stretching */
+    text-align: center;
+    font-size: 1.2rem;
+    font-style: italic;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+  }
+  
+  
+  /* Fade transitions */
+  .fade-in {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+  }
+  
+  .fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  
+  
+  

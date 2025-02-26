@@ -2,28 +2,68 @@ document.addEventListener("DOMContentLoaded", () => {
     const input = document.getElementById("message");
     const airplane = document.querySelector(".airplane");
 //adjust quotes api
-    const api_url ="https://zenquotes.io/api/quotes/";
-
-async function getapi(url)
-{
-  const response = await fetch(url);
-  var data = await response.json();
-  console.log(data);
-}
-
-getapi(api_url);
-
-
-    // Allow pressing Enter to send message
+// Allow pressing Enter to send message and fetch a new quote
+// Assuming 'input' is defined and references your text input element
+    const leadParagraph = document.getElementById("lead-text");
+    const form = document.querySelector("form");
+    const quoteElement = document.getElementById("quote");
+  
     input.addEventListener("keypress", function(event) {
         if (event.key === "Enter") {
             event.preventDefault();
+    
             if (input.value.trim() !== "") {
                 animateAirplane();
                 input.value = ""; // Clear after sending
+    
+                // Fade out paragraph and form
+                leadParagraph.classList.add("fade-out");
+                form.classList.add("fade-out");
+    
+                setTimeout(() => {
+                    leadParagraph.style.visibility = "hidden";
+                    form.style.visibility = "hidden";
+    
+                    // Fetch the quote
+                    fetch('https://qapi.vercel.app/api/random')
+                    .then(response => response.json())
+                    .then(data => {
+                        quoteElement.textContent = `"${data.quote}" - ${data.author}`;
+    
+                        // Show the quote
+                        quoteElement.style.visibility = "visible";
+                        quoteElement.style.opacity = "1";
+                        quoteElement.classList.remove("fade-out");
+                        quoteElement.classList.add("fade-in");
+                    })
+                    .catch(error => {
+                        console.error("Error fetching quote:", error);
+                    });
+    
+                    // Hide the quote after 3 seconds and restore the paragraph & form
+                    setTimeout(() => {
+                        quoteElement.classList.remove("fade-in");
+                        quoteElement.classList.add("fade-out");
+    
+                        setTimeout(() => {
+                            // Hide the quote
+                            quoteElement.style.visibility = "hidden";
+                            quoteElement.style.opacity = "0";
+    
+                            // Restore paragraph & form
+                            leadParagraph.style.visibility = "visible";
+                            form.style.visibility = "visible";
+                            leadParagraph.classList.remove("fade-out");
+                            form.classList.remove("fade-out");
+                            leadParagraph.classList.add("fade-in");
+                            form.classList.add("fade-in");
+                        }, 500);
+                    }, 6000); // How long the quote stays visible
+                }, 500); // Delay to allow fade-out animation
             }
         }
     });
+    
 
     function animateAirplane() {
         let x = 0;
