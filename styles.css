@@ -17,6 +17,9 @@ body{
     font-style: normal;
     transition: background 0.5s ease-in-out;
 }
+h1{
+    padding-bottom: 15px;
+}
 .overlay{
     background: rgba(0, 0, 0, 0.2); /* Adjust the color and opacity as needed */
     z-index: 1;
