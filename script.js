@@ -114,14 +114,20 @@ document.addEventListener("DOMContentLoaded", () => {
         // Pick a random background
         const randomIndex = Math.floor(Math.random() * backgrounds.length);
         const selected = backgrounds[randomIndex];
-
+        
+        function preloadImage(url, callback) {
+            const img = new Image();
+            img.src = url;
+            img.onload = callback;
+        }
         // Set the background image on the body or a specific container
-        document.body.style.background = `url('${selected.img}'),${selected.overlay}`;
-        document.body.style.backgroundSize = 'cover';
-        document.body.style.backgroundPosition = 'center';
-        document.body.style.backgroundBlendMode = 'overlay';
-        document.body.style.backgroundRepeat= "no-repeat";
-
+        preloadImage(selected.img, () => {
+            document.body.style.background = `url('${selected.img}'),${selected.overlay}`;
+            document.body.style.backgroundSize = 'cover';
+            document.body.style.backgroundPosition = 'center';
+            document.body.style.backgroundBlendMode = 'overlay';
+            document.body.style.backgroundRepeat= "no-repeat";
+        });
        // create audio with customizations  
         const wavesurfer = WaveSurfer.create({
             container: '#waveform',
