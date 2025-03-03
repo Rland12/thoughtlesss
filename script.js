@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
     // Array of background objects with image and sound
     const path = window.location.pathname;
-    if (path === "/" || path.endsWith("index.html")) {
+    if (path === "thoughtlesss/" || path.endsWith("index.html")) {
         const backgrounds = [
             { img: 'images/fireplace.gif', sound: 'sounds/firesound.mp3', overlay:'rgba(138, 55, 190, 12)'},
             { img: 'images/rain_image.gif', sound: 'sounds/rainsound.mp3', overlay:'rgba(255, 105, 97, 12)'},
