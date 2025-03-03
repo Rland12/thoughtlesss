@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const input = document.getElementById("message");
     const airplane = document.querySelector(".airplane");
-//adjust quotes api
+
 // Allow pressing Enter to send message and fetch a new quote
 // Assuming 'input' is defined and references your text input element
     const leadParagraph = document.getElementById("lead-text");
@@ -130,6 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
             autoplay: true,
             waveColor: 'white',
             progressColor: '#383351',
+            mediaControls: true,
             barRadius: 10,
             barWidth: 2,
             cursorColor: 'transparent',
@@ -139,8 +140,14 @@ document.addEventListener("DOMContentLoaded", () => {
           wavesurfer.on('finish', () => {
             wavesurfer.play();
         });
-          wavesurfer.on('interaction', () => {
-            wavesurfer.playPause();
-          })
+        document.addEventListener("click", () => {
+            if (wavesurfer && wavesurfer.backend.ac.state === "suspended") {
+              wavesurfer.backend.ac.resume().then(() => {
+                console.log("Audio context resumed");
+              });
+            }
+          });
+          
     }
+
 });

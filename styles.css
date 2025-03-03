@@ -31,6 +31,7 @@ body{
 .nav-link{
     display: inline-block;
     font-family: "freude", sans-serif;
+    font-size: 20px;
     color:#FFF4EB;
     transition:transform ease 1s;
 }
@@ -60,6 +61,10 @@ body{
 nav a:hover{
     transform: scale(1.2);
     color:#FFF4EB;
+}
+:host(audio){
+    height: 10px;
+    width: 1px;
 }
 
 h1,h2,h3{
