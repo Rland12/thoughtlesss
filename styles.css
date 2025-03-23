@@ -16,6 +16,7 @@ body{
     font-weight: 400;
     font-style: normal;
     transition: background 0.5s ease-in-out;
+    padding: 10px;
 }
 h1{
     padding-bottom: 15px;
@@ -97,10 +98,10 @@ textarea:focus {
     position: relative;
     margin-top: 0;
     padding-top: 0;
+    margin-right: 15px
   }
 
-  /* Position the quote container absolutely in the center of the screen */
-/* Start hidden for the quote */
+  
 #quote {
     position: absolute; /* Removes it from normal flow */
     left: 50%;
@@ -116,7 +117,18 @@ textarea:focus {
     transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
   }
   
-  
+  @media (max-height: 500px) and (orientation: landscape) {
+    #quote {
+        margin-top: 60px;
+        font-size: 1rem;
+    }
+}
+@media screen and (max-width: 480px) and (max-height: 400px) {
+    #quote {
+        margin-top: 60px;
+        font-size: 14px; /* Adjust size for better readability */
+    }
+}
   /* Fade transitions */
   .fade-in {
     opacity: 1;
